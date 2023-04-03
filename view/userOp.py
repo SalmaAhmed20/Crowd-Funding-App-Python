@@ -86,8 +86,8 @@ def register():
     user = User(round(time.time()), firstName,
                 lastName, email, password, phone)
     if Verify(email=email):
-        cont = "\n"+str(user.get_id())+":"+user.firstName+":"+user.lastName + \
-            ":"+user.get_email()+":"+user.get_password()+":"+user.get_phone()
+        cont = str(user.get_id())+":"+user.firstName+":"+user.lastName + \
+            ":"+user.get_email()+":"+user.get_password()+":"+user.get_phone()+"\n"
         append_file("data/user.txt", content=cont)
         users.append(user)
         print("<<You can Now Login>>")

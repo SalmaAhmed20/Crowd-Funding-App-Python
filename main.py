@@ -1,6 +1,6 @@
 from view import *
 while True:
-    print ("---We lcome to Crowd-Funding App ---")
+    print ("---Welcome to Crowd-Funding App ---")
     print("1. Register")
     print("2. Login")
     print("3. Exit")

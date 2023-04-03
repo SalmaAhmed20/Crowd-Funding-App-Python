@@ -101,12 +101,15 @@ def UpdateProject(_id, loginedUser):
                 while True:
                     updatedproject = project
                     updatedproject = MenutoUpdate(updatedproject)
-                    print("You Want to update another field? [Y/N]")
-                    choice = input("[Y/N(default)]")
-                    if choice.lower() == "y":
-                        continue
+                    if updatedproject:
+                        print("You Want to update another field? [Y/N]")
+                        choice = input("[Y/N(default)]")
+                        if choice.lower() == "y":
+                            continue
+                        else:
+                            break
                     else:
-                        break
+                        return
             else:
                 print("not your project")
                 return

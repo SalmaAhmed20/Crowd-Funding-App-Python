@@ -29,6 +29,8 @@ def MenutoUpdate(project):
         if choice not in choicess or len(choice) > 1:
             print("In valid input")
             continue
+        if choice=="6":
+            return
         if choice == "1":
             while True:
                 title = input("Title: ")
@@ -91,7 +93,5 @@ def MenutoUpdate(project):
                 else:
                     project.totalTarget = totaltarget
                     break
-        else:
-            return
         return project
 
