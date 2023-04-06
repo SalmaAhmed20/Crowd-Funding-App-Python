@@ -5,12 +5,12 @@
 Crowd-Funding console app Crowdfunding is the practice of funding a project or venture by raising small amounts of money from a large number of people, typically via the Internet. Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over US$34 billion was raised worldwide by crowdfunding.
 
 ## Make Your Configuration
-In Package helpers -> email_utils.py  
+In env file  
 Setup 2 variables: 
 ```python
-    sender_email = "< ur email >" 
+    SENDER_EMAIL = "< ur email >" 
     #In sendEmail function
-    password ="< password of sender email >" 
+    PASSWORD ="< password of sender email >" 
 ```
 Adjust your SMTP domain and port
 ## Features
