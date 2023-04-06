@@ -3,6 +3,8 @@ from helper import sendEmail
 from helper import read_file
 from email.mime.text import MIMEText
 from model import User
+import os
+from dotenv import load_dotenv
 
 def Load_Users():
     usersF = read_file('data/user.txt')
@@ -24,10 +26,14 @@ def check_user(email):
 
 
 def Verify(email):
+    load_dotenv()
+    sender_email = os.getenv("SENDER_EMAIL",  None)
+    assert sender_email is not None, "Failed to get SENDER_EMAIL from ENV VARS"
     while True:
         verifyCode = generateRandomCode()
         message = MIMEText(f"""\
         Your Verification Code is : {verifyCode}.""")
+        message['From']=sender_email
         message['Subject'] = "Verify Crowd-Funding App "
         sendEmail(email, message.as_string())
         inVcode = input("Please Enter Verification Code: ")
